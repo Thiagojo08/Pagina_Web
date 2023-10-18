@@ -11,7 +11,7 @@ body {
 
 .cs-inicio {
     background-image: url(img/images/iniciocs2.jpg);
-    filter: blur(2px);
+    filter: blur(1px);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
