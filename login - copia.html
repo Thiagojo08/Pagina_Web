@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="estilos2.css">
+    <link rel="stylesheet" href="estilos3.css">
     <link rel="shortcut icon" href="img/logo2.jpg" type="image/x-icon">
     <title>House of CS</title>
     <style>
@@ -22,10 +22,11 @@
 <body>
     <header>
         <div class="cs-inicio">
-            <img src="img/Logo2/Logo-CSGO.png" alt="">
             <div class="encabezado-pistola">
-                <h1>Logeate con Nosotros</h1>
+                <h1></h1>
             </div>
+        </div>
+
 
             <nav class="menu1">
                 <ul>
@@ -35,21 +36,27 @@
                     <li><a href="Armas cortas- copia.html">ARMAS CORTAS</a></li>
                     <li><a href="Escopetas- copia.html">ESCOPETAS </a></li>
                     <li><a href="Mapas - copia.html">MAPAS</a></li>
+                    <li><a href="login - copia.html">FORMULARIO</a></li>
 
                 </ul>
             </nav>
     </header>
 
-    <h1>Formulario de Contacto</h1>
 
+    <div class="formulario-contacto">
+    <h2>Formulario de Contacto</h2>
     <div id="formulario">
         <form id="contactForm">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <div id="nombreError" class="error"></div>
 
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+            <div id="telefonoError" class="error"></div>
+
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
             <div id="emailError" class="error"></div>
 
             <label for="mensaje">Mensaje:</label>
@@ -59,13 +66,17 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
-
     <div id="datosEnviados" style="display: none;">
         <h2>Datos Enviados:</h2>
         <p><strong>Nombre:</strong> <span id="nombreEnviado"></span></p>
+        <p><strong>Teléfono:</strong> <span id="telefonoEnviado"></span></p>
         <p><strong>Email:</strong> <span id="emailEnviado"></span></p>
         <p><strong>Mensaje:</strong> <span id="mensajeEnviado"></span></p>
     </div>
+
+    <script src="script.js"></script>
+
+</div>
 
 
 

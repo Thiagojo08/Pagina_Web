@@ -11,7 +11,7 @@ body {
 
 .cs-inicio {
     background-image: url(img/images/iniciocs2.jpg);
-    filter: blur(1px);
+    filter: blur(0px);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -25,9 +25,14 @@ body {
 
 }
 .contenido {
+    font-size: 30px;
     text-align: center;
-    color: aliceblue;
+    color: rgb(159, 50, 255);
 
+}
+.contenido p{
+    color: #fa036e;
+    font-size: 30px;
 }
 
 .menu1 {
