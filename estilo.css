@@ -63,7 +63,43 @@ body {
 }
 
 /*SECCION DE CARROUSEL*/
-.carousel-container {
+
+/* .contenedor {
+    width: 70%;
+    position: relative;
+    height: 780px;
+}
+.botones{
+    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0,.7);
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(255, 255, 255,.6);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+    .botones:hover{
+        cursor: pointer;
+        transform: scale(1.2, 1.2);
+    }
+
+    .atras {
+        left: 2%;
+        top: calc(50%-70%);
+    }
+    .adelante {
+        right: 2%;
+        top: calc(50%-70%);
+    } */
+    
+ .carousel-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,7 +129,7 @@ body {
 }
 
 /* Botones "Anterior" y "Siguiente" */
-#prevBtn, #nextBtn {
+ #prevBtn, #nextBtn {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
@@ -106,17 +142,17 @@ body {
 
 #prevBtn:hover, #nextBtn:hover {
     background-color: #0056b3;
-}
+} 
 
-/* Estilo de la imagen actual */
+/*Estilo de la imagen actual */
 .carousel img:first-child {
     display: block;
-}
+} 
 
-/* Opcional: Agrega transiciones para animar el cambio de imágenes */
-.carousel img {
+/*Opcional: Agrega transiciones para animar el cambio de imágenes */
+ .carousel img {
     transition: opacity 0.5s ease-in-out;
-}
+}  
 
 
 /*APARTADO INFORMACION*/

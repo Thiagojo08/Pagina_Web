@@ -1,32 +1,42 @@
-// document.addEventListener("DOMContentLoaded", () =>{
-//     const prevBtn = document.getElementById("prevBtn");
-//     const nextBtn = document.getElementById("nextBtn");
-//     const carousel = document.querySelector(".carousel"); 
-//     const imagenes = document.querySelectorAll(".carousel img"); 
+// var imagenes = ['img/imagenesCarousel/inicio2.1.jpg','img/imagenesCarousel/pistol2.jpg','img/imagenesCarousel/fusiles2.jpg'],
+// cont =0; 
+// function carrousel(contenedor){
+//     contenedor.addEventListener('click', e=> {
+//         let atras = contenedor.querySelector('.atras'),
+//         adelante = contenedor.querySelector('.adelante'),
+//         img= contenedor.querySelector(',img'), 
+//         tgt = e.target; 
 
-//     let currentIndex =0; 
-
-//     prevBtn.addEventListener("click", () => {
-//         currentIndex = (currentIndex -1 + imagenes.length) % imagenes.length; 
-//         actualizarCarrousel(); 
-//     }); 
-
-//     nextBtn.addEventListener("click", () => {
-//         currentIndex = (currentIndex + 1) % imagenes.length; 
-//         actualizarCarrousel(); 
-//     }); 
-
-//     function actualizarCarrousel(){
-//         imagenes.forEach((img, index) => {
-//             if(index===currentIndex) {
-//                 img.style.display = "block"; 
+//         if(tgt==atras){
+//             if(cont>0){
+//                 img.src = imagenes[cont-1];
+//                 cont--; 
 //             } else {
-//                 img.style.display = "none"; 
+//                 img.src= imagenes[imagenes.length -1]; 
+//                 cont= imagenes.length - 1;  
 //             }
+//         }else if(tgt==adelante){
+//             if(cont < imagenes.length - 1 ){
+//                 img.src= imagenes[cont + 1 ]; 
+//                 cont++; 
+//             } else{
+//                 img.src= imagenes[0]; 
+//                 cont = imagenes.length -1; 
+//             }
+
+//         }
+
 //     }); 
+
 // }
-// actualizarCarrousel(); 
+
+// document.addEventListener("DOMContentLoaded",()=> {
+//     let contenedor = document.querySelector('.contenedor');
+//     carrousel(contenedor);  
+
 // }); 
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.getElementById("prevBtn");
