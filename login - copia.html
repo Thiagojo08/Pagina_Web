@@ -10,6 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="estilos3.css">
     <link rel="shortcut icon" href="img/logo2.jpg" type="image/x-icon">
+    <script src="formulario.js" ></script>
     <title>House of CS</title>
     <style>
         .error{
@@ -35,49 +36,42 @@
                     <li><a href="Rifles - copia.html">FUSILES</a></li>
                     <li><a href="Armas cortas- copia.html">ARMAS CORTAS</a></li>
                     <li><a href="Escopetas- copia.html">ESCOPETAS </a></li>
-                    <li><a href="Mapas - copia.html">MAPAS</a></li>
                     <li><a href="login - copia.html">FORMULARIO</a></li>
 
                 </ul>
             </nav>
     </header>
 
-
-    <div class="formulario-contacto">
-    <h2>Formulario de Contacto</h2>
-    <div id="formulario">
-        <form id="contactForm">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-            <div id="nombreError" class="error"></div>
-
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
-            <div id="telefonoError" class="error"></div>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <div id="emailError" class="error"></div>
-
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required maxlength="250"></textarea>
-            <div id="mensajeError" class="error"></div>
-
-            <button type="submit">Enviar</button>
+    <div class="container">
+        <h1>Formulario</h1>
+        <form id="myForm" onsubmit="return validarFormulario()">
+          <label for="nombre">Nombre :</label>
+          <input type="text" id="nombre" required maxlength="30">
+    
+          <label for="email">Email :</label>
+          <input type="email" id="email" maxlength="20">
+    
+          <label for="edad">Edad :</label>
+          <input type="number" id="edad" required min="18" max="99">
+    
+          <label for="mensaje">Mensaje :</label>
+          <textarea id="mensaje" required maxlength="200"></textarea>
+    
+          <input type="submit" value="Enviar" class="enviar-button">
         </form>
+        <div id="datosIngresados" class="hidden">
+          <h2>Datos Ingresados:</h2>
+          <p><strong>Nombre:</strong> <span id="nombreIntroducido"></span></p>
+          <p><strong>Email:</strong> <span id="emailIntroducido"></span></p>
+          <p><strong>Edad:</strong> <span id="edadIntroducido"></span></p>
+          <p><strong>Mensaje:</strong> <span id="mensajeIntroducido"></span></p>
+          
+        </div>
+        <div id="mensajeEnviado" class="hidden">
+          <p>Mensaje enviado exitosamente</p>
+          <button id="nuevoMensajeButton" class="button" onclick="nuevoMensaje()">Enviar Nuevo Mensaje</button>
+        </div>
     </div>
-    <div id="datosEnviados" style="display: none;">
-        <h2>Datos Enviados:</h2>
-        <p><strong>Nombre:</strong> <span id="nombreEnviado"></span></p>
-        <p><strong>Teléfono:</strong> <span id="telefonoEnviado"></span></p>
-        <p><strong>Email:</strong> <span id="emailEnviado"></span></p>
-        <p><strong>Mensaje:</strong> <span id="mensajeEnviado"></span></p>
-    </div>
-
-    <script src="script.js"></script>
-
-</div>
-
 
 
 </body>

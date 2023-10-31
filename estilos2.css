@@ -64,6 +64,9 @@ h1{
 
 /* TABLA STATS DE ARMAS*/
 .contenido {
+max-width: 100%;
+overflow: auto;
+display: flex;
 color: rgb(254, 255, 255);
 margin: 180px;
 border: solid 2px rgb(0, 0, 0);

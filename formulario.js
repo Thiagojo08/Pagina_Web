@@ -1,51 +1,67 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
-    const nombre = document.getElementById("nombre");
-    const telefono = document.getElementById("telefono");
-    const email = document.getElementById("email");
-    const mensaje = document.getElementById("mensaje"); // Agregar el campo de mensaje
-    const datosEnviados = document.getElementById("datosEnviados");
+function validarFormulario() {
+  var nombre = document.getElementById("nombre");
+  var email = document.getElementById("email");
+  var edad = document.getElementById("edad");
+  var mensaje = document.getElementById("mensaje");
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        // Restablecer errores
-        document.querySelectorAll(".error").forEach(function (element) {
-            element.innerHTML = "";
-        });
+  if (nombre.value.length > 30) {
+    nombre.classList.add("error");
+    return false;
+  } else {
+    nombre.classList.remove("error");
+  }
 
-        // Validar nombre (solo letras y espacios)
-        if (!/^[a-zA-Z\s]+$/.test(nombre.value)) {
-            document.getElementById("nombreError").innerHTML = "El nombre debe contener solo letras y espacios.";
-        }
+  if (email.value.length > 20 || (email.value && !email.value.includes('@'))) {
+    email.classList.add("error");
+    return false;
+  } else {
+    email.classList.remove("error");
+  }
 
-        // Validar teléfono (solo números)
-        if (!/^\d+$/.test(telefono.value)) {
-            document.getElementById("telefonoError").innerHTML = "El número de teléfono solo debe contener números.";
-        }
+  if (edad.value < 18 || edad.value >= 100) {
+    edad.classList.add("error");
+    return false;
+  } else {
+    edad.classList.remove("error");
+  }
 
-        // Validar email (usando una expresión regular simple para verificar el formato de email)
-        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
-            document.getElementById("emailError").innerHTML = "El email no es válido.";
-        }
+  if (mensaje.value.length > 200) {
+    mensaje.classList.add("error");
+    return false;
+  } else {
+    mensaje.classList.remove("error");
+  }
 
-        // Validar longitud del mensaje
-        if (mensaje.value.length > 250) {
-            document.getElementById("mensajeError").innerHTML = "El mensaje no debe superar los 250 caracteres.";
-        }
+  
+  var nombreMostrado = document.getElementById("nombreIntroducido");
+  var emailMostrado = document.getElementById("emailIntroducido");
+  var edadMostrada = document.getElementById("edadIntroducido");
+  var mensajeMostrado = document.getElementById("mensajeIntroducido");
 
-        // Si no hay errores, mostrar los datos enviados
-        if (
-            nombreError.innerHTML === "" &&
-            telefonoError.innerHTML === "" &&
-            emailError.innerHTML === "" &&
-            mensajeError.innerHTML === ""
-        ) {
-            document.getElementById("nombreEnviado").textContent = nombre.value;
-            document.getElementById("telefonoEnviado").textContent = telefono.value;
-            document.getElementById("emailEnviado").textContent = email.value;
-            document.getElementById("mensajeEnviado").textContent = mensaje.value;
-            datosEnviados.style.display = "block";
-            form.style.display = "none";
-        }
-    });
-});
+  nombreMostrado.textContent = nombre.value;
+  emailMostrado.textContent = email.value;
+  edadMostrada.textContent = edad.value;
+  mensajeMostrado.textContent = mensaje.value;
+
+  
+  document.getElementById("myForm").classList.add("hidden");
+  document.getElementById("datosIngresados").classList.remove("hidden");
+  document.getElementById("mensajeEnviado").classList.remove("hidden");
+
+  return false;
+}
+
+function nuevoMensaje() {
+  
+  document.getElementById("nombre").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("edad").value = "";
+  document.getElementById("mensaje").value = "";
+
+  // Mostrar el formulario nuevamente
+  document.getElementById("myForm").classList.remove("hidden");
+
+  // Ocultar los elementos de datos ingresados y mensaje enviado
+  document.getElementById("datosIngresados").classList.add("hidden");
+  document.getElementById("mensajeEnviado").classList.add("hidden");
+}
